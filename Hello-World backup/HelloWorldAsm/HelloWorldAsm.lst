@@ -1,0 +1,47 @@
+Microsoft (R) Macro Assembler Version 9.00.30729.01	    06/20/12 11:46:38
+.\main.asm						     Page 1 - 1
+
+
+ 0000				DATAS  SEGMENT
+ 0000 0D 0A 48 65 6C 6C		     STRING  DB  13,10,'Hello World!',13,10,'$'
+       6F 20 57 6F 72 6C
+       64 21 0D 0A 24
+ 0011				DATAS  ENDS
+
+ 0000				CODES  SEGMENT
+				     ASSUME    CS:CODES,DS:DATAS
+ 0000				START:
+ 0000  B8 ---- R		     MOV  AX,DATAS
+.\main.asm(8) : error A2004:symbol type conflict
+ 0003  8E D8			     MOV  DS,AX
+ 0005  8D 16 0000 R		     LEA  DX,STRING
+ 0009  B4 09			     MOV  AH,9
+ 000B  CD 21			     INT  21H
+				   
+ 000D  B4 4C			     MOV  AH,4CH
+ 000F  CD 21			     INT  21H
+ 0011				CODES  ENDS
+				    END   START
+Microsoft (R) Macro Assembler Version 9.00.30729.01	    06/20/12 11:46:38
+.\main.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0011	  	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0011	  	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	Public
+STRING . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+
+	   1 Warnings
+	   1 Errors
