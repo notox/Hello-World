@@ -10,9 +10,10 @@ int main()
 
 	char dic[5000][17];
 	char msg[500];
-	bool ingroup;
 	bool matched;
 
+	freopen("a.in","r",stdin);
+	freopen("a.out","w",stdout);
 	scanf("%d %d %d", &l, &d, &n);
 	for (i = 0; i < d; i++)
 	{
@@ -30,45 +31,26 @@ int main()
 			{
 				// is c in gourp j
 				char c = dic[i][j];
-				ingroup = false;
 				matched = false;
 				g = 0;
+				k = -1;
 
 				// get group index
-				for(k = 0; k < strlen(msg); k++)
-				{			
+				while(msg[++k] != '\0')
+				{
 					if(msg[k] == '(')
 					{
-						if (g == j)
-							s = k + 1;
-
-						ingroup = true;
-						continue;
-					}			
-
-					if(msg[k] == ')')
-					{
-						if (g == j)
-						{
-							e = k - 1;
-							break;
-						}	
-
-						g++;
-						ingroup = false;
-						continue;
+						s = k + 1;
+						while(msg[++k] != ')') ;
+						e = k - 1;
 					}
-
-					if(!ingroup)
+					else
 					{
-						if (g == j)
-						{
-							s = e = k;
-							break;
-						}
-
-						g++;
+						s = e = k;
 					}
+					if (g == j)
+						break;
+					g++;
 				}
 
 				// check whether c is in group
