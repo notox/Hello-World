@@ -16,9 +16,7 @@ int main()
 	freopen("a.out","w",stdout);
 	scanf("%d %d %d", &l, &d, &n);
 	for (i = 0; i < d; i++)
-	{
 		scanf("%s", dic[i]);
-	}
 
 	for (m = 0; m < n; m++)
 	{
@@ -26,42 +24,36 @@ int main()
 		r = 0;
 		for(i = 0; i < d; i++)
 		{
-			// check every word with the message	
-			for(j = 0; j < l; j++)
-			{
-				// is c in gourp j
-				char c = dic[i][j];
-				matched = false;
-				g = 0;
-				k = -1;
+			g = 0;
+			k = -1;
 
+			while(msg[++k] != '\0')
+			{
 				// get group index
-				while(msg[++k] != '\0')
+				matched = false;
+				if(msg[k] == '(')
 				{
-					if(msg[k] == '(')
-					{
-						s = k + 1;
-						while(msg[++k] != ')') ;
-						e = k - 1;
-					}
-					else
-					{
-						s = e = k;
-					}
-					if (g == j)
-						break;
-					g++;
+					s = k + 1;
+					while(msg[++k] != ')') ;
+					e = k - 1;
+				}
+				else
+				{
+					s = e = k;
 				}
 
-				// check whether c is in group
-				for(k = s; k <= e; k++)
+				// check whether char is in group
+				for(j = s; j <= e; j++)
 				{
-					if(msg[k] == c)
+					if(msg[j] == dic[i][g])
 						matched = true;
 				}
 				if (!matched)
 					break;
+
+				g++;
 			}
+
 			if (matched)
 				r++;
 		}
