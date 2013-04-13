@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToeTomek", "TicTacToeTomek\TicTacToeTomek.vcproj", "{A3C5DDAF-7562-4AC6-9759-A6838243072C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lawnmower", "Lawnmower\Lawnmower.vcproj", "{ADF426AA-2FEE-4B03-A246-A2C8F0AE945A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FairAndSquare", "FairAndSquare\FairAndSquare.vcproj", "{23C9B689-1543-4F12-BD00-F11584E787A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3C5DDAF-7562-4AC6-9759-A6838243072C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A3C5DDAF-7562-4AC6-9759-A6838243072C}.Debug|Win32.Build.0 = Debug|Win32
+		{A3C5DDAF-7562-4AC6-9759-A6838243072C}.Release|Win32.ActiveCfg = Release|Win32
+		{A3C5DDAF-7562-4AC6-9759-A6838243072C}.Release|Win32.Build.0 = Release|Win32
+		{ADF426AA-2FEE-4B03-A246-A2C8F0AE945A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ADF426AA-2FEE-4B03-A246-A2C8F0AE945A}.Debug|Win32.Build.0 = Debug|Win32
+		{ADF426AA-2FEE-4B03-A246-A2C8F0AE945A}.Release|Win32.ActiveCfg = Release|Win32
+		{ADF426AA-2FEE-4B03-A246-A2C8F0AE945A}.Release|Win32.Build.0 = Release|Win32
+		{23C9B689-1543-4F12-BD00-F11584E787A8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{23C9B689-1543-4F12-BD00-F11584E787A8}.Debug|Win32.Build.0 = Debug|Win32
+		{23C9B689-1543-4F12-BD00-F11584E787A8}.Release|Win32.ActiveCfg = Release|Win32
+		{23C9B689-1543-4F12-BD00-F11584E787A8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
