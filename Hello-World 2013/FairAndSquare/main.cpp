@@ -1,8 +1,13 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 #define FOUND 1
+
+char s[100000000000000];
+char e[100000000000000];
+char m[100000000000000];
 
 int pow(int n, int e)
 {
@@ -14,28 +19,47 @@ int pow(int n, int e)
 	return r;
 }
 
-int isFair(int m)
+int isFair(const char *a)
 {
-	int i,j,k;
-	int n = 1;
-	k = m;
-	while((k /= 10) != 0)
-		n++;
-
-	for(i = 0; i<n; i++)
-	{
-		if (i == n/2)
-			return FOUND;
-		
-		if ((m/pow(10, i))%10 != (m/pow(10, n-(i+1)))%10)
+	int len = strlen(a);
+	for (int i = 0; i < len/2; ++i)
+		if (*(a+i) != *(a+len-i-1))
 			return !FOUND;
-	}
 	return FOUND;
+}
+
+void plus1(int j)
+{	
+	int i;
+	int l = strlen(s);
+	int k = l - j;
+	if (k < 0)
+	{
+		for (i = l; i >= l; i--)
+		{
+			m[i+1] = m[i];
+		}
+		m[0] = '1';
+	}
+
+	l = atoi(&s[k]);
+	if (l + 1 < 10)
+	{
+		itoa(l + 1, &s[k], 10);
+		return;
+	}
+	else
+	{
+		// add a new bit
+		s[k] = '0';
+	}
+
+	plus1(j+1);					
 }
 
 int main()
 {
-	int i, j, k, s, e, n, r;
+	int i, j, k, n, r; 
 
 	freopen("a.in","r",stdin);
 	freopen("a.out","w",stdout);
@@ -44,16 +68,21 @@ int main()
 
 	for (i = 0; i < n; i++)
 	{
-		scanf("%d %d\n", &s, &e);  
+		scanf("%s %s\n", s, e);  
 
 		r = 0;
-		for (j = s; j <= e; j++)
+		while(strcmp(s, e) != 0)
 		{
-			if (!isFair(j))
+			if (!isFair(s))
+			{
+				plus1(1);
 				continue;
-			int k = (int)sqrt((double)j);
-			if (k*k == j && isFair(k))
+			}
+			//m = (int)sqrt((double)j);
+			if (isFair(s))
 				r++;
+
+			plus1(1);
 		}
 
 		printf("Case #%d: %d\n", i+1, r);
