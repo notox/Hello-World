@@ -1,65 +1,58 @@
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 
 #define FOUND 1
 
-char s[100000000000000];
-char e[100000000000000];
-char m[100000000000000];
-
-int pow(int n, int e)
+int getValue(double m, int i)
 {
-	int i;
-	int r = 1;
-	for (i = 0; i<e; i++)
-		r *= n;
+	double t = m / pow(10.0, i);
+	modf(t, &t);
 
-	return r;
+	int v = (int)t;
+	v %= 10;
+	
+	return v;
 }
 
-int isFair(const char *a)
+int isFair(double m)
 {
-	int len = strlen(a);
-	for (int i = 0; i < len/2; ++i)
-		if (*(a+i) != *(a+len-i-1))
+	int i,j;
+	double k;
+	int n = 1;
+	k = m;
+
+	while (k != 0)
+	{
+		k /= 10;
+		modf(k, &k);
+
+		if (k != 0)
+			n++;
+	}
+
+	for(i = 0; i<n; i++)
+	{
+		if (i == n/2)
+			return FOUND;
+
+		if (getValue(m, i) != getValue(m, n-(i+1)))
 			return !FOUND;
+	}
 	return FOUND;
 }
 
-void plus1(int j)
-{	
-	int i;
-	int l = strlen(s);
-	int k = l - j;
-	if (k < 0)
-	{
-		for (i = l; i >= l; i--)
-		{
-			m[i+1] = m[i];
-		}
-		m[0] = '1';
-	}
-
-	l = atoi(&s[k]);
-	if (l + 1 < 10)
-	{
-		itoa(l + 1, &s[k], 10);
-		return;
-	}
-	else
-	{
-		// add a new bit
-		s[k] = '0';
-	}
-
-	plus1(j+1);					
+double nextFair(double d)
+{
+	// Not implemented
+	return 0.0;
 }
 
 int main()
 {
-	int i, j, k, n, r; 
+	int i, n, r;
+	double j, k, s, e;
+	bool sqrtFound;
 
 	freopen("a.in","r",stdin);
 	freopen("a.out","w",stdout);
@@ -68,21 +61,31 @@ int main()
 
 	for (i = 0; i < n; i++)
 	{
-		scanf("%s %s\n", s, e);  
+		scanf("%lf %lf\n", &s, &e);  
 
 		r = 0;
-		while(strcmp(s, e) != 0)
+		sqrtFound = false;
+		for (j = s; j <= e; j++)
 		{
-			if (!isFair(s))
+			if (sqrtFound)
 			{
-				plus1(1);
-				continue;
+				k = k+1;
+				j = k*k;
+				if (j > e)
+					break;
 			}
-			//m = (int)sqrt((double)j);
-			if (isFair(s))
-				r++;
+			else
+			{
+				k = floor(sqrt((double)j));
 
-			plus1(1);
+				if (k*k != j)
+					continue;
+				else
+					sqrtFound = true;
+			}
+
+			if (isFair(j) && isFair(k))
+				r++;
 		}
 
 		printf("Case #%d: %d\n", i+1, r);
