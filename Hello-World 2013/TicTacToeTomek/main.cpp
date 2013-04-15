@@ -16,18 +16,30 @@ int isWin(char c)
 	int j,k;
 	
 	for (j = 0; j < 4; j++)
-		if (isOk(j, 0, c) && isOk(j, 1, c) && isOk(j, 2, c) && isOk(j, 3, c))
-			return WIN;
+		for (k = 0; k < 4; k++)
+			if (!isOk(j,k,c))
+				break;
+			else if (k == 3)
+				return WIN;
 
 	for (j = 0; j < 4; j++)
-		if (isOk(0, j, c) && isOk(1, j, c) && isOk(2, j, c) && isOk(3, j, c))
+		for (k = 0; k < 4; k++)
+			if (!isOk(k,j,c))
+				break;
+			else if (k == 3)
+				return WIN;
+
+	for (k = 0; k < 4; k++)
+		if (!isOk(k,k,c))
+			break;
+		else if (k == 3)
 			return WIN;
 
-	if (isOk(0, 0, c) && isOk(1, 1, c) && isOk(2, 2, c) && isOk(3, 3, c))
-		return WIN;
-
-	if (isOk(0, 3, c) && isOk(1, 2, c) && isOk(2, 1, c) && isOk(3, 0, c))
-		return WIN;
+	for (k = 0; k < 4; k++)
+		if (!isOk(k,3-k,c))
+			break;
+		else if (k == 3)
+			return WIN;
 
 	return !WIN;
 }
