@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 #define FOUND 1
-#define OK 1
 
 int mysqrt(const char *ja, char *ka)
 {
@@ -72,86 +72,40 @@ int mysqrt(const char *ja, char *ka)
 	return (h == 0) || (m%h == 0);	
 }
 
-char* plus(char *ja, int n)
-{
-	int i, j, h;
-	int len = strlen(ja);
-	char s1;
-	char s2[2];
-
-	j = n;
-	for (i = 0; i < len + 1; i++)
-	{
-		if (len == i)
-		{
-			for (j = 0; j < len; j++)
-			{
-				ja[len+1-j] = ja[len-j];
-			}
-			ja[0] = '1';
-			break;
-		}
-
-		s1 = ja[len-1-i];
-		j += atoi(&s1);
-		if (j < 10)
-		{
-			itoa(j, s2, 10);
-			ja[len-1-i] = s2[0];
-			break;
-		}
-		else
-		{
-			itoa(j%10, s2, 10);
-			ja[len-1-i] = s2[0];
-			j = j/10;
-		}
-	}
-
-	return ja;
-}
-
-int isFair(const char *a)
-{
-	int len = strlen(a);
-	for (int i = 0; i < len/2; ++i)
-		if (*(a+i) != *(a+len-i-1))
-			return !FOUND;
-	return FOUND;
-}
-
 int main()
 {
 	int i, n, r;
-	double j, k, s, e;
-
-	char ja[14];
-	char ka[14];
-	char ea[14];
+	double s1;
+	char s2[15], s3[15]; 
 
 	freopen("a.in","r",stdin);
 	freopen("a.out","w",stdout);
 
 	scanf("%d\n", &n); 
 
+	clock_t now;
+	now = clock();
+
 	for (i = 0; i < n; i++)
 	{
-		scanf("%s %s\n", ja, ea);
-		s = atof(ja);
-		e = atof(ea);
-
-		r = 0;
-		for (j = s; j <= e; j++)
-		{
-			if (mysqrt(ja, ka) && isFair(ja) && isFair(ka))
-				r++;
-
-			plus(ja, 1);
-		}
-
-		printf("Case #%d: %d\n", i+1, r);
-
+		scanf("%lf\n", &s1);
+		sqrt(s1);	
 	}
+	clock_t now2;
+	now2 = clock();
+	printf("%d s\n", now2 - now);
+
+	now = clock();
+
+	for (i = 0; i < n; i++)
+	{
+		scanf("%s\n", s2);
+		mysqrt(s2, s3); 
+	}
+
+	now2 = clock();
+	printf("%d s\n", now2 - now);
+
 	return 0;
 }
 

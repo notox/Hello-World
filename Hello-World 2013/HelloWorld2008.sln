@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fair", "Fair\Fair.vcproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sprintf", "sprintf\sprintf.vcproj", "{C58D63EF-09F4-4B7A-8FBA-956DB8E318C1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqrt", "sqrt\sqrt.vcproj", "{736B9A12-29DB-4118-B64F-84650ED630B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,10 @@ Global
 		{C58D63EF-09F4-4B7A-8FBA-956DB8E318C1}.Debug|Win32.Build.0 = Debug|Win32
 		{C58D63EF-09F4-4B7A-8FBA-956DB8E318C1}.Release|Win32.ActiveCfg = Release|Win32
 		{C58D63EF-09F4-4B7A-8FBA-956DB8E318C1}.Release|Win32.Build.0 = Release|Win32
+		{736B9A12-29DB-4118-B64F-84650ED630B3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{736B9A12-29DB-4118-B64F-84650ED630B3}.Debug|Win32.Build.0 = Debug|Win32
+		{736B9A12-29DB-4118-B64F-84650ED630B3}.Release|Win32.ActiveCfg = Release|Win32
+		{736B9A12-29DB-4118-B64F-84650ED630B3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
