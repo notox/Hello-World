@@ -14,32 +14,36 @@ int isOk(int j, int k, char c)
 int isWin(char c)
 {
 	int j,k;
-	
+	bool winr, winc;
+	bool win1, win2; 
+
+	win1 = true;
+	win2 = true;
 	for (j = 0; j < 4; j++)
+	{
+		winr = true;
+		winc = true; 
 		for (k = 0; k < 4; k++)
+		{
 			if (!isOk(j,k,c))
-				break;
-			else if (k == 3)
-				return WIN;
+				winr = false;
 
-	for (j = 0; j < 4; j++)
-		for (k = 0; k < 4; k++)
 			if (!isOk(k,j,c))
-				break;
-			else if (k == 3)
-				return WIN;
+				winc = false;
+		}
 
-	for (k = 0; k < 4; k++)
-		if (!isOk(k,k,c))
-			break;
-		else if (k == 3)
+		if (winr || winc)
 			return WIN;
 
-	for (k = 0; k < 4; k++)
-		if (!isOk(k,3-k,c))
-			break;
-		else if (k == 3)
-			return WIN;
+		if (!isOk(j,j,c))
+			win1 = false;
+
+		if (!isOk(j,3-j,c))
+			win2 = false;
+	}		
+
+	if (win1 || win2)
+		return WIN;
 
 	return !WIN;
 }
