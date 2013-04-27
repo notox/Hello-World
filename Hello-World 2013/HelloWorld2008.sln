@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bullseye", "Bullseye\Bullse
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Balance", "Balance\Balance.vcproj", "{F37243B8-451B-45A4-BDDE-EFB0E340225D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fir", "Fir\Fir.vcproj", "{FBAC74FE-AD04-41C1-BD08-1ABFB196D7C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -61,6 +63,10 @@ Global
 		{F37243B8-451B-45A4-BDDE-EFB0E340225D}.Debug|Win32.Build.0 = Debug|Win32
 		{F37243B8-451B-45A4-BDDE-EFB0E340225D}.Release|Win32.ActiveCfg = Release|Win32
 		{F37243B8-451B-45A4-BDDE-EFB0E340225D}.Release|Win32.Build.0 = Release|Win32
+		{FBAC74FE-AD04-41C1-BD08-1ABFB196D7C2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FBAC74FE-AD04-41C1-BD08-1ABFB196D7C2}.Debug|Win32.Build.0 = Debug|Win32
+		{FBAC74FE-AD04-41C1-BD08-1ABFB196D7C2}.Release|Win32.ActiveCfg = Release|Win32
+		{FBAC74FE-AD04-41C1-BD08-1ABFB196D7C2}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
