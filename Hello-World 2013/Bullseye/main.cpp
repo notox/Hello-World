@@ -18,7 +18,7 @@ int main()
 		used = 0;
 		for (j = 0; ; j++)
 		{
-			used += (r+2*j+1)*(r+2*j+1)-(r+2*j)*(r+2*j);
+			used += 2*r + 4*j + 1;
 			if (used > t)
 				break;
 			result++;
