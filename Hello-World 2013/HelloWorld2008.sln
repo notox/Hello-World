@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqrt", "sqrt\sqrt.vcproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rotate", "Rotate\Rotate.vcproj", "{907DD62B-8A75-44EF-ADC3-295A1222152C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bullseye", "Bullseye\Bullseye.vcproj", "{9F203618-A00D-48D1-8662-05309F937804}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -49,6 +51,10 @@ Global
 		{907DD62B-8A75-44EF-ADC3-295A1222152C}.Debug|Win32.Build.0 = Debug|Win32
 		{907DD62B-8A75-44EF-ADC3-295A1222152C}.Release|Win32.ActiveCfg = Release|Win32
 		{907DD62B-8A75-44EF-ADC3-295A1222152C}.Release|Win32.Build.0 = Release|Win32
+		{9F203618-A00D-48D1-8662-05309F937804}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9F203618-A00D-48D1-8662-05309F937804}.Debug|Win32.Build.0 = Debug|Win32
+		{9F203618-A00D-48D1-8662-05309F937804}.Release|Win32.ActiveCfg = Release|Win32
+		{9F203618-A00D-48D1-8662-05309F937804}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
