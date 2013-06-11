@@ -1,9 +1,6 @@
-def calcConsonants(consonants, nameLen, n):
-    nvalue = 0
+def calcConsonants(nvalue, consonants, nameLen, n):
     if n == 0:
         return nvalue
-        
-    nvalue += calcConsonants(consonants, nameLen, n - 1)
     
     consonantsLen = len(consonants)
     for i in range(0, consonantsLen-n+1):
@@ -27,7 +24,8 @@ def calcConsonants(consonants, nameLen, n):
             nvalue += (preview + 1)       
         elif preview == 0:
             nvalue += (next + 1)  
-    return nvalue
+            
+    return calcConsonants(nvalue, consonants, nameLen, n - 1)
 
 re = input()
 for ri in xrange(re):
@@ -43,6 +41,6 @@ for ri in xrange(re):
         if reduce(lambda x,y: x and y, map(lambda x: substring.find(x) < 0, vowels)):
             consonants.append(i)
         
-    nvalue = calcConsonants(consonants, nameLen, len(consonants))
+    nvalue = calcConsonants(nvalue, consonants, nameLen, len(consonants))
 
     print "Case #" + str(ri + 1) + ": " + str(nvalue)
