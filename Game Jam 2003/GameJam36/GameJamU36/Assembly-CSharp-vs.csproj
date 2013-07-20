@@ -46,13 +46,16 @@
   <ItemGroup>
      <Compile Include="Assets\Script\Animation.cs" />
      <Compile Include="Assets\Script\CameraControl.cs" />
+     <Compile Include="Assets\Script\DeadCube.cs" />
      <Compile Include="Assets\Script\Hands.cs" />
      <Compile Include="Assets\Script\Organ.cs" />
      <Compile Include="Assets\Script\OrganAdhere.cs" />
      <Compile Include="Assets\Script\OrganOnFloor.cs" />
      <Compile Include="Assets\Script\Platform.cs" />
      <Compile Include="Assets\Script\PlayerControl.cs" />
+     <Compile Include="Assets\Script\ReviveCube.cs" />
      <Compile Include="Assets\Script\SingleHand.cs" />
+     <Compile Include="Assets\Script\organSelect.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
