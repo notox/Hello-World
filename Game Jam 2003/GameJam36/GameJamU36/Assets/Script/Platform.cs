@@ -5,6 +5,7 @@ public class Platform : MonoBehaviour {
 	
 	public float SpeedFactor = 1.0f;
 	public float JumpFactor = 1.0f;
+	public float Speed = 0f;
 	
 	
 	// Use this for initialization
@@ -22,5 +23,9 @@ public class Platform : MonoBehaviour {
 	}
 	public float GetJumpFactor(){
 		return JumpFactor;
+	}
+	public float GetSpeed()
+	{
+		return Speed;
 	}
 }

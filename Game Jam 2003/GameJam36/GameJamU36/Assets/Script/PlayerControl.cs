@@ -187,15 +187,19 @@ public class PlayerControl : MonoBehaviour {
 			// if player touch a colider in upper
 			
 			float velocity_factor = 1.0f;
+			float platform_speed = 0f;
 			if ( LocatePlatForm != null )
+			{
 				velocity_factor = LocatePlatForm.GetSpeedFactor();
+				platform_speed = LocatePlatForm.GetSpeed();
+			}
 			
 			if ( IfInAir )
 				LocateNormal = Vector3.up;
 			if ( move_dir == MoveDirection.Left )
-				vel_move= Vector3.Cross( LocateNormal , Vector3.back ) * HorizontalMaxSpeed * velocity_factor;
+				vel_move= Vector3.Cross( LocateNormal , Vector3.back ) * (HorizontalMaxSpeed + platform_speed) * velocity_factor;
 			else
-				vel_move= Vector3.Cross( LocateNormal , Vector3.forward ) * HorizontalMaxSpeed * velocity_factor;
+				vel_move= Vector3.Cross( LocateNormal , Vector3.forward ) * (HorizontalMaxSpeed + platform_speed) * velocity_factor;
 			//vel_diff = LocateNormal * 0.01f;
 			
 		//}else{ //set gravity
@@ -206,7 +210,8 @@ public class PlayerControl : MonoBehaviour {
 			
 		}
 		
-			player.rigidbody.velocity = vel_move + vel_diff + vel_grav;
+		player.rigidbody.velocity = vel_move + vel_diff + vel_grav;
+		
 		//Vector3 velocity = player.rigidbody.velocity;
 		//velocity.x = Mathf.Clamp( velocity.x , - HorizontalMaxSpeed * velocity_factor , HorizontalMaxSpeed * velocity_factor );
 		//player.rigidbody.velocity = velocity;
