@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour {
 	
 	private Vector3 LocateNormal = Vector3.up ;
 	
-	private bool IfInAir = true;
+	static private bool IfInAir = true;
 	
 	static public GameObject player = null;
 	
@@ -37,6 +37,11 @@ public class PlayerControl : MonoBehaviour {
 	
 	//Impulse from wall
 	public float ImpulseFromWallFactor = 0.1f;
+	
+	int IfInAirCount = 0;
+	
+	//Revive Point
+	static public Vector3 RevivePoint = Vector3.zero;
 	
 	// Use this for initialization
 	void Start () {
@@ -74,6 +79,8 @@ public class PlayerControl : MonoBehaviour {
 		if ( ShouldPushHand() )
 			PushHand();
 		SetVelocity();
+		Smooth();
+		
 	}
 	
 	bool ShouldGoRight(){
@@ -158,13 +165,24 @@ public class PlayerControl : MonoBehaviour {
 			}
 		}
 	}
+	
+	void OnCollisionStay( Collision coll ){
+		foreach ( ContactPoint c in coll.contacts )
+		{
+			if ( c.otherCollider.tag == ColliderTag )
+			{
+				player.transform.position += c.normal * 0.002f;
+			}
+		}
+			
+	}
+	
 	void OnCollisionExit( Collision coll ){
 		foreach ( ContactPoint c in coll.contacts )
 		{
 			if ( c.otherCollider.tag == ColliderTag )
 			{
 				IfInAir = true;
-				LocateNormal = Vector3.up;
 			}
 		}
 	}
@@ -181,12 +199,12 @@ public class PlayerControl : MonoBehaviour {
 		*/
 		//set direction move
 		//if ( !IfInAir ){
-			Vector3 vel_move = Vector3.zero;
-			Vector3 vel_diff = Vector3.zero;
-			Vector3 vel_grav = Vector3.zero;
-			// if player touch a colider in upper
+		Vector3 vel_move = Vector3.zero;
+		Vector3 vel_diff = Vector3.zero;
+		Vector3 vel_grav = Vector3.zero;
+		// if player touch a colider in upper
 			
-			float velocity_factor = 1.0f;
+		float velocity_factor = 1.0f;
 			float platform_speed = 0f;
 			if ( LocatePlatForm != null )
 			{
@@ -194,33 +212,65 @@ public class PlayerControl : MonoBehaviour {
 				platform_speed = LocatePlatForm.GetSpeed();
 			}
 			
-			if ( IfInAir )
-				LocateNormal = Vector3.up;
-			if ( move_dir == MoveDirection.Left )
-				vel_move= Vector3.Cross( LocateNormal , Vector3.back ) * (HorizontalMaxSpeed + platform_speed) * velocity_factor;
-			else
-				vel_move= Vector3.Cross( LocateNormal , Vector3.forward ) * (HorizontalMaxSpeed + platform_speed) * velocity_factor;
-			//vel_diff = LocateNormal * 0.01f;
-			
-		//}else{ //set gravity
-		if ( IfInAir ){
+		
+		//for set the velocity directly
+		LocateNormal = Vector3.up;
+		if ( move_dir == MoveDirection.Left )
+			vel_move= Vector3.Cross( LocateNormal , Vector3.back ) * (HorizontalMaxSpeed-platform_speed) * velocity_factor;
+		else
+			vel_move= Vector3.Cross( LocateNormal , Vector3.forward ) * (HorizontalMaxSpeed+platform_speed) * velocity_factor;
+		//vel_diff = LocateNormal * 0.01f;
+		
+		if ( CheckIfInAir() ){
 			vel_grav = player.rigidbody.velocity;
 			vel_grav.x = vel_grav.z = 0f;
 			vel_grav.y += GravityAcceleration * Time.deltaTime;
-			
 		}
 		
 		player.rigidbody.velocity = vel_move + vel_diff + vel_grav;
 		
-		//Vector3 velocity = player.rigidbody.velocity;
-		//velocity.x = Mathf.Clamp( velocity.x , - HorizontalMaxSpeed * velocity_factor , HorizontalMaxSpeed * velocity_factor );
-		//player.rigidbody.velocity = velocity;
+		//for force
+		//if ( move_dir == MoveDirection.Right )
+		//	player.rigidbody.AddForce( Vector3.right * 3f );
+		//if ( move_dir == MoveDirection.Left )
+		//	player.rigidbody.AddForce( Vector3.left * 3f );
+		
+		//player.rigidbody.AddForce( Vector3.up * GravityAcceleration , ForceMode.Acceleration );
+		
+		
+		//limit the velocity
+		Vector3 velocity = player.rigidbody.velocity;
+		velocity.x = Mathf.Clamp( velocity.x , - HorizontalMaxSpeed * velocity_factor , HorizontalMaxSpeed * velocity_factor );
+		velocity.z = 0;
+		player.rigidbody.velocity = velocity;
 		
 	}
 	
+	bool CheckIfInAir(){
+		if ( IfInAir == false )
+			return false;
+		if ( IfInAirCount < 3 )
+			return false;
+		return true;
+	}
+	
+	void Smooth(){
+		
+		if ( IfInAir )
+		{
+			IfInAirCount ++;
+		}else
+			IfInAirCount = 0;
+		
+	}
 	
 	void OnGUI(){
-		GUILayout.Label( "IfInAir" + IfInAir );	
+		GUILayout.Label( "IfInAir" + CheckIfInAir() );	
 		
+	}
+	
+	static public void OnDead(){
+		player.transform.position = RevivePoint;
+		IfInAir = true;
 	}
 }

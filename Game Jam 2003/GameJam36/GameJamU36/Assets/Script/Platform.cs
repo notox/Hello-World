@@ -26,6 +26,6 @@ public class Platform : MonoBehaviour {
 	}
 	public float GetSpeed()
 	{
-		return Speed;
+		return Speed ;
 	}
 }
