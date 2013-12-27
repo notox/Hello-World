@@ -24,6 +24,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LeftShift", "LeftShift\Left
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Contain", "Contain\Contain.vcxproj", "{62FF60FF-7494-4ACA-AB33-6498641F24A4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sum", "Sum\Sum.vcxproj", "{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = HelloWorld.vsmdi
@@ -135,6 +137,18 @@ Global
 		{62FF60FF-7494-4ACA-AB33-6498641F24A4}.Release|Win32.ActiveCfg = Release|Win32
 		{62FF60FF-7494-4ACA-AB33-6498641F24A4}.Release|Win32.Build.0 = Release|Win32
 		{62FF60FF-7494-4ACA-AB33-6498641F24A4}.Release|x86.ActiveCfg = Release|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Debug|Win32.Build.0 = Debug|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Debug|x86.ActiveCfg = Debug|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Release|Any CPU.ActiveCfg = Release|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Release|Win32.ActiveCfg = Release|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Release|Win32.Build.0 = Release|Win32
+		{7D06E614-A0B9-48FC-9A07-8D6A7B015F34}.Release|x86.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
