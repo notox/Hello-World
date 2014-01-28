@@ -22,7 +22,7 @@ class RegisterForm(forms.Form):
 	
 class RegisterFormView(View):
 	form_class = RegisterForm
-	template_name = 'ris/study/index_form.html'	
+	template_name = 'ris/register.html'	
 	
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -47,7 +47,7 @@ class RegisterFormView(View):
 	
 			study = Study(accnum=form.cleaned_data['accnum'], study_date=form.cleaned_data['study_date'], patient=patient, visitType=visittype, department=department)
 			study.save()
-			return HttpResponseRedirect(reverse('ris:study_register_form'))
+			return HttpResponseRedirect(reverse('ris:register'))
 		
 		return render(request, self.template_name, {
 			'form': form, 'latest_study_list': latest_study_list
