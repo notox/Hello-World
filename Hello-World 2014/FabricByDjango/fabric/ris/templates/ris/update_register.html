@@ -10,8 +10,8 @@
     <p>No studies are available.</p>
 {% endif %}
 
-<form action="{% url 'ris:register' %}" method="post">
+<form action="{% url 'ris:update_register' 1%}" method="post">
 {% csrf_token %}
 {{ form.as_p }}
-<input type="submit" value="{% trans "Register" %}" />
+<input type="submit" value="{% trans "Update" %}" />
 </form>
