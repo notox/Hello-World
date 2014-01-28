@@ -7,6 +7,9 @@ from django.views.generic.base import View
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 from ris.models import Study, Department, VisitType, Patient
 
 class RegisterForm(forms.Form):
@@ -20,6 +23,10 @@ class RegisterForm(forms.Form):
 class RegisterFormView(View):
 	form_class = RegisterForm
 	template_name = 'ris/study/index_form.html'	
+	
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(RegisterFormView, self).dispatch(*args, **kwargs)
 	
 	def get(self, request, *args, **kwargs):
 		form = self.form_class()
