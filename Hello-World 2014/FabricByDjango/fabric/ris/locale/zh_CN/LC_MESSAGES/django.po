@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ris\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-27 14:47+0800\n"
-"PO-Revision-Date: 2014-01-27 14:47+0800\n"
+"POT-Creation-Date: 2014-01-29 12:45+0800\n"
+"PO-Revision-Date: 2014-01-29 12:48+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,45 +17,77 @@ msgstr ""
 "Language: zh_CN\n"
 "X-Generator: Poedit 1.6.3\n"
 
-#: .\models.py:12 .\models.py:13 .\models.py:52 .\views.py:16
+#: .\models.py:12 .\models.py:13 .\models.py:134 .\views.py:22
 msgid "Department"
 msgstr "申请科室"
 
-#: .\models.py:23 .\models.py:24 .\models.py:53 .\views.py:17
-msgid "VisitType"
+#: .\models.py:23 .\models.py:24 .\views.py:23
+msgid "Visit Type"
 msgstr "就诊类型"
 
-#: .\models.py:34 .\models.py:35
+#: .\models.py:34 .\models.py:35 .\models.py:135
 msgid "Clinician"
 msgstr "申请医生"
 
-#: .\models.py:38 .\views.py:12
+#: .\models.py:46 .\models.py:47 .\models.py:136
+msgid "Region"
+msgstr "病区"
+
+#: .\models.py:57 .\models.py:58 .\models.py:137
+msgid "Mode"
+msgstr "检查模式"
+
+#: .\models.py:69 .\models.py:70
+msgid "Item Type"
+msgstr "检查项目大类"
+
+#: .\models.py:81 .\models.py:82
+msgid "Item"
+msgstr "检查项目"
+
+#: .\models.py:93 .\models.py:94 .\models.py:138
+msgid "Exam Room"
+msgstr "检查地点"
+
+#: .\models.py:105 .\models.py:106 .\models.py:139
+msgid "Device"
+msgstr "设备"
+
+#: .\models.py:109 .\views.py:18
 msgid "Name"
 msgstr "姓名"
 
-#: .\models.py:39 .\views.py:13
+#: .\models.py:110 .\views.py:19
 msgid "Birthday"
 msgstr "生日"
 
-#: .\models.py:45 .\models.py:46 .\models.py:49
+#: .\models.py:116 .\models.py:117 .\models.py:131
 msgid "Patient"
 msgstr "病人"
 
-#: .\models.py:50 .\views.py:14
+#: .\models.py:127 .\models.py:128 .\models.py:140
+msgid "Study Status"
+msgstr "检查状态"
+
+#: .\models.py:132 .\views.py:20
 msgid "Accnum"
 msgstr "摄片序号"
 
-#: .\models.py:51 .\views.py:15
+#: .\models.py:133 .\views.py:21
 msgid "Study Date"
 msgstr "检查日期"
 
-#: .\models.py:59 .\models.py:60
+#: .\models.py:146 .\models.py:147
 msgid "Study"
 msgstr "检查"
 
-#: .\templates\ris\study\index_form.html:14
+#: .\templates\ris\register.html:16
 msgid "Register"
 msgstr "登记"
+
+#: .\templates\ris\update_register.html:16
+msgid "Update"
+msgstr "更新"
 
 #~ msgid "birthday"
 #~ msgstr "生日"

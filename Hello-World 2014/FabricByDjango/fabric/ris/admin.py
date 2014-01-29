@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ris.models import Patient, Study, Department, VisitType
+from ris.models import Patient, Study, Department, VisitType, Clinician, Region, Mode, ExamRoom, Device, StudyStatus
 
 class StudyInline(admin.StackedInline):
 	model = Study
@@ -18,3 +18,9 @@ admin.site.register(Patient, PatinetAdmin)
 admin.site.register(Study, StudyAdmin)
 admin.site.register(Department)
 admin.site.register(VisitType)
+admin.site.register(Clinician)
+admin.site.register(Region)
+admin.site.register(Mode)
+admin.site.register(ExamRoom)
+admin.site.register(Device)
+admin.site.register(StudyStatus)

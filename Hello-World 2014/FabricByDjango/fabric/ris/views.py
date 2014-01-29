@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
-from ris.models import Study, Department, VisitType, Patient
+from ris.models import Study, Department, VisitType, Patient, Clinician
 
 class RegisterForm(forms.Form):
 	pk = forms.IntegerField(required=False, widget=HiddenInput)
@@ -20,7 +20,8 @@ class RegisterForm(forms.Form):
 	accnum = forms.CharField(label=_('Accnum'),max_length=20)
 	study_date = forms.DateTimeField(label=_('Study Date'))
 	department = forms.ModelChoiceField(Department.objects.order_by('-id'), label=_('Department'))
-	visittype = forms.ModelChoiceField(VisitType.objects.order_by('-id'), label=_('VisitType'))
+	visit_type = forms.ModelChoiceField(VisitType.objects.order_by('-id'), label=_('Visit Type'))
+	clinician = forms.ModelChoiceField(Clinician.objects.order_by('-id'), label=_('Clinician'))
 	
 class RegisterFormView(View):
 	form_class = RegisterForm
@@ -42,12 +43,12 @@ class RegisterFormView(View):
 		latest_study_list = Study.objects.order_by('-pk')[:5]
 		if form.is_valid():
 			department = form.cleaned_data['department']
-			visittype = form.cleaned_data['visittype']
+			visit_type = form.cleaned_data['visit_type']
 		
 			patient = Patient(name=form.cleaned_data['name'], birthday=form.cleaned_data['birthday'])
 			patient.save()
 	
-			study = Study(accnum=form.cleaned_data['accnum'], study_date=form.cleaned_data['study_date'], patient=patient, visitType=visittype, department=department)
+			study = Study(accnum=form.cleaned_data['accnum'], study_date=form.cleaned_data['study_date'], patient=patient, visit_type=visit_type, department=department)
 			study.save()
 			return HttpResponseRedirect(reverse('ris:register'))
 		
@@ -71,7 +72,7 @@ class RegisterFormUpdateView(View):
 			'birthday':study.patient.birthday,
 			'accnum':study.accnum,
 			'study_date':study.study_date,
-			'visittype':study.visitType.pk,
+			'visit_type':study.visit_type.pk,
 			'department':study.department.pk
 		})
 		latest_study_list = Study.objects.order_by('-pk')[:5]
@@ -84,7 +85,7 @@ class RegisterFormUpdateView(View):
 		latest_study_list = Study.objects.order_by('-pk')[:5]
 		if form.is_valid():
 			department = form.cleaned_data['department']
-			visittype = form.cleaned_data['visittype']
+			visit_type = form.cleaned_data['visit_type']
 	
 			study_id = form.cleaned_data['pk']
 			study = Study.objects.get(pk=study_id)			
@@ -95,7 +96,7 @@ class RegisterFormUpdateView(View):
 			
 			study.accnum=form.cleaned_data['accnum']
 			study.study_date=form.cleaned_data['study_date']			
-			study.visitType=visittype
+			study.visit_type=visit_type
 			study.department=department
 			study.save()
 			
