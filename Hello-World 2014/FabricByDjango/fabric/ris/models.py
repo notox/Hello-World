@@ -2,8 +2,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 class Department(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
+	name = models.CharField(_('Department'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
 	
 	def __unicode__(self):
 		return self.name
@@ -13,8 +13,8 @@ class Department(models.Model):
 		verbose_name_plural = _('Department')
 
 class VisitType(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
+	name = models.CharField(_('VisitType'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
 	
 	def __unicode__(self):
 		return self.name
@@ -24,8 +24,8 @@ class VisitType(models.Model):
 		verbose_name_plural = _('Visit Type')
 		
 class Clinician(models.Model):
-	name = models.CharField(max_length=30)
-	department = models.ForeignKey(Department)
+	name = models.CharField(_('Clinician'), max_length=30)
+	department = models.ForeignKey(Department, verbose_name=_('Department'))
 	
 	def __unicode__(self):
 		return self.name
@@ -35,9 +35,9 @@ class Clinician(models.Model):
 		verbose_name_plural = _('Clinician')
 
 class Region(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
-	department = models.ForeignKey(Department)
+	name = models.CharField(_('Region'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
+	department = models.ForeignKey(Department, verbose_name=_('Department'))
 	
 	def __unicode__(self):
 		return self.name
@@ -47,8 +47,8 @@ class Region(models.Model):
 		verbose_name_plural = _('Region')
 
 class Mode(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
+	name = models.CharField(_('Mode'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
 	
 	def __unicode__(self):
 		return self.name
@@ -58,9 +58,9 @@ class Mode(models.Model):
 		verbose_name_plural = _('Mode')
 		
 class ItemType(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
-	mode = models.ForeignKey(Mode)
+	name = models.CharField(_('ItemType'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
+	mode = models.ForeignKey(Mode, verbose_name=_('Mode'))
 	
 	def __unicode__(self):
 		return self.name
@@ -70,9 +70,9 @@ class ItemType(models.Model):
 		verbose_name_plural = _('Item Type')
 		
 class Item(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
-	item_type = models.ForeignKey(ItemType)
+	name = models.CharField(_('Item'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
+	item_type = models.ForeignKey(ItemType, verbose_name=_('Item Type'))
 	
 	def __unicode__(self):
 		return self.name
@@ -82,9 +82,9 @@ class Item(models.Model):
 		verbose_name_plural = _('Item')
 		
 class ExamRoom(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
-	mode = models.ForeignKey(Mode)
+	name = models.CharField(_('Exam Room'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
+	mode = models.ForeignKey(Mode, verbose_name=_('Mode'))
 	
 	def __unicode__(self):
 		return self.name
@@ -94,9 +94,9 @@ class ExamRoom(models.Model):
 		verbose_name_plural = _('Exam Room')
 		
 class Device(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
-	exam_room = models.ForeignKey(ExamRoom)
+	name = models.CharField(_('Device'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
+	exam_room = models.ForeignKey(ExamRoom, verbose_name=_('Exam Room'))
 	
 	def __unicode__(self):
 		return self.name
@@ -117,8 +117,8 @@ class Patient(models.Model):
 		verbose_name_plural = _('Patient')
 	
 class StudyStatus(models.Model):
-	name = models.CharField(max_length=30)
-	comment = models.CharField(max_length=50, blank=True)
+	name = models.CharField(_('Study Status'), max_length=30)
+	comment = models.CharField(_('Comment'), max_length=50, blank=True)
 	
 	def __unicode__(self):
 		return self.name

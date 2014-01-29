@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ris\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-29 12:45+0800\n"
-"PO-Revision-Date: 2014-01-29 12:48+0800\n"
+"POT-Creation-Date: 2014-01-29 13:46+0800\n"
+"PO-Revision-Date: 2014-01-29 13:46+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,19 @@ msgstr ""
 "Language: zh_CN\n"
 "X-Generator: Poedit 1.6.3\n"
 
-#: .\models.py:12 .\models.py:13 .\models.py:134 .\views.py:22
+#: .\models.py:5 .\models.py:16 .\models.py:27 .\models.py:38 .\models.py:50
+#: .\models.py:61 .\models.py:73 .\models.py:85 .\models.py:97 .\models.py:109
+#: .\models.py:120 .\views.py:18
+msgid "Name"
+msgstr "姓名"
+
+#: .\models.py:6 .\models.py:17 .\models.py:39 .\models.py:51 .\models.py:62
+#: .\models.py:74 .\models.py:86 .\models.py:98 .\models.py:121
+msgid "Comment"
+msgstr "备注"
+
+#: .\models.py:12 .\models.py:13 .\models.py:28 .\models.py:40 .\models.py:134
+#: .\views.py:22
 msgid "Department"
 msgstr "申请科室"
 
@@ -25,7 +37,7 @@ msgstr "申请科室"
 msgid "Visit Type"
 msgstr "就诊类型"
 
-#: .\models.py:34 .\models.py:35 .\models.py:135
+#: .\models.py:34 .\models.py:35 .\models.py:135 .\views.py:24
 msgid "Clinician"
 msgstr "申请医生"
 
@@ -33,11 +45,11 @@ msgstr "申请医生"
 msgid "Region"
 msgstr "病区"
 
-#: .\models.py:57 .\models.py:58 .\models.py:137
+#: .\models.py:57 .\models.py:58 .\models.py:63 .\models.py:87 .\models.py:137
 msgid "Mode"
 msgstr "检查模式"
 
-#: .\models.py:69 .\models.py:70
+#: .\models.py:69 .\models.py:70 .\models.py:75
 msgid "Item Type"
 msgstr "检查项目大类"
 
@@ -45,17 +57,13 @@ msgstr "检查项目大类"
 msgid "Item"
 msgstr "检查项目"
 
-#: .\models.py:93 .\models.py:94 .\models.py:138
+#: .\models.py:93 .\models.py:94 .\models.py:99 .\models.py:138
 msgid "Exam Room"
 msgstr "检查地点"
 
 #: .\models.py:105 .\models.py:106 .\models.py:139
 msgid "Device"
 msgstr "设备"
-
-#: .\models.py:109 .\views.py:18
-msgid "Name"
-msgstr "姓名"
 
 #: .\models.py:110 .\views.py:19
 msgid "Birthday"
