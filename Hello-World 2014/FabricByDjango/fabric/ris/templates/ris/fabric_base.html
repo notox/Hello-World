@@ -1,0 +1,12 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="{% static "ris/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+	</head>
+	<body>
+		{% block content %} {% endblock %}
+		<script src="{% static "ris/bootstrap/js/bootstrap.min.js" %}"></script>
+	</body>
+</html>
