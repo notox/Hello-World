@@ -1,0 +1,23 @@
+<div id="content" class="pop-widget">
+	<div id='newregistrytitle' class='widgettitle'>
+		<ul>
+			<li class='logo'>
+				<div ></div>
+			</li>
+			<li>
+				<label>Hello World</label>
+			</li>
+			<li class='closeWidget'>
+				<a  href='#' ></a>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<p>Hello World</p>
+	</div>
+	<script>
+		$('.closeWidget').click(function(){
+			window.parent.$('body').trigger('close-widget', [$('#content'), $('.win-shadow')]);
+		});
+	</script>
+</div>
