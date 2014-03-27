@@ -11,7 +11,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
-from ris.models import Study, Department, VisitType, Patient, Clinician
+from ris.models import Study, Patient
+from hospital.models import Department, VisitType, Clinician
 
 class RegisterForm(forms.Form):
 	pk = forms.IntegerField(required=False, widget=HiddenInput)
