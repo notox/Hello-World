@@ -1,0 +1,17 @@
+{% load i18n %} 
+
+{% if latest_study_list %}
+    <ul>
+    {% for study in latest_study_list %}
+        <li><a href="{% url 'ris:update_register' study.id %}">{{ study.patient }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No studies are available.</p>
+{% endif %}
+
+<form action="{% url 'ris:update_register' 1%}" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="{% trans "Update" %}" />
+</form>
