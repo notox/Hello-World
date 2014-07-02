@@ -7,32 +7,31 @@ import java.util.List;
 
 public class HelloList {
     public static void main(String[] args) {
-        List<String> names = new ArrayList<String>();
+        List<String> names = new ArrayList<>();
         names.add("Jay");
 
         System.out.println("Old List Content: " + names.get(0));
 
         // Java7
-        // List<String> names7 = new ArrayList<>();
-        // names.add("Jay");
+        List<String> names7 = new ArrayList<>();
+        names7.add("Jay");
 
         // List<String> namesByNewArrayList = newArrayList("Jay");
         // List<String> namesByOf = of("Jay");
         Person boy13 = new Person("Jay", 13);
         Person youngMan = new Person("Adam", 27);
         Person oldMan = new Person("Andy", 80);
-        List<Person> persons = new ArrayList<Person>();
+        List<Person> persons = new ArrayList<>();
         persons.add(boy13);
         persons.add(youngMan);
         persons.add(oldMan);
 
         transformListByOldStyle(persons);
         transformListByFunctionStyle(persons);
-
     }
 
     public static void transformListByOldStyle(List<Person> persons) {
-        List<String> names = new ArrayList<String>();
+        List<String> names = new ArrayList<>();
         for(Person person : persons) {
             int age = person.getAge();
             if (age >= 14 && age <= 28) {
