@@ -35,8 +35,14 @@ namespace Lab
         {
             return person.Name; 
         }
+
+        public static IList<String> EmptyList()
+        {
+            var emptyList = new List<String>();
+            return emptyList;
+        }
     }
-    
+
     [TestClass]
     public class Dynamic
     {
