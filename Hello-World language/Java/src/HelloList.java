@@ -15,6 +15,8 @@ public class HelloList {
         // Java7
         List<String> names7 = new ArrayList<>();
         names7.add("Jay");
+        // Java doesn't support the following expression. While, C# does.
+        // names7[0] = "Adam";
 
         // List<String> namesByNewArrayList = newArrayList("Jay");
         // List<String> namesByOf = of("Jay");
