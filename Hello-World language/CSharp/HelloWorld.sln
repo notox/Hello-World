@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance", "HelloWorld\Performance.csproj", "{8ACB0EE0-486A-4543-85ED-9B087246CDF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambda", "Lambda\Lambda.csproj", "{31CCA9C7-A1B9-447B-8478-132837E93339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{8ACB0EE0-486A-4543-85ED-9B087246CDF9}.Debug|x86.Build.0 = Debug|x86
 		{8ACB0EE0-486A-4543-85ED-9B087246CDF9}.Release|x86.ActiveCfg = Release|x86
 		{8ACB0EE0-486A-4543-85ED-9B087246CDF9}.Release|x86.Build.0 = Release|x86
+		{31CCA9C7-A1B9-447B-8478-132837E93339}.Debug|x86.ActiveCfg = Debug|x86
+		{31CCA9C7-A1B9-447B-8478-132837E93339}.Debug|x86.Build.0 = Debug|x86
+		{31CCA9C7-A1B9-447B-8478-132837E93339}.Release|x86.ActiveCfg = Release|x86
+		{31CCA9C7-A1B9-447B-8478-132837E93339}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
