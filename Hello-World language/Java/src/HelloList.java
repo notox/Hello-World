@@ -3,12 +3,12 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HelloList {
     public static void main(String[] args) {
-        List<String> names = new ArrayList<>();
-        names.add("Jay");
+        List<String> names = Arrays.asList("Jay");
 
         System.out.println("Old List Content: " + names.get(0));
 
@@ -18,13 +18,10 @@ public class HelloList {
 
         // List<String> namesByNewArrayList = newArrayList("Jay");
         // List<String> namesByOf = of("Jay");
-        Person boy13 = new Person("Jay", 13);
-        Person youngMan = new Person("Adam", 27);
-        Person oldMan = new Person("Andy", 80);
-        List<Person> persons = new ArrayList<>();
-        persons.add(boy13);
-        persons.add(youngMan);
-        persons.add(oldMan);
+        List<Person> persons = Arrays.asList(
+                                            new Person("Jay", 13),
+                                            new Person("Adam", 27),
+                                            new Person("Andy", 80));
 
         transformListByOldStyle(persons);
         transformListByFunctionStyle(persons);
