@@ -8,26 +8,20 @@ namespace Lab
 {
     public class Person
     {
-        public String Name = String.Empty;
-        public int Age = 0;
-
-        public Person(String name, int age)
-        {
-            this.Name = name;
-            this.Age = age;
-        }
+        private String name = String.Empty;
+        private int age = 0;
+    
+        public String Name { get; set; }
+        public int Age { get; set; }
     }
     
     public class Teacher
     {
-        public String Name = String.Empty;
-        public int Age = 0;
+        private String name = String.Empty;
+        private int age = 0;
 
-        public Teacher(String name, int age)
-        {
-            this.Name = name;
-            this.Age = age;
-        }
+        public String Name { get; set; }
+        public int Age { get; set; }
 
         public String Teach()
         {
@@ -49,8 +43,8 @@ namespace Lab
         [TestMethod]
         public void DynamicMethod()
         {
-            Person person = new Person("Jay", 18);
-            Teacher teacher = new Teacher("Adam", 20);
+            Person person = new Person{Name = "Jay", Age = 18};
+            Teacher teacher = new Teacher{Name = "Adam", Age = 20};
             Assert.AreEqual("Jay", Converter.Execute(person));
             Assert.AreEqual("Adam", Converter.Execute(teacher));
         }
