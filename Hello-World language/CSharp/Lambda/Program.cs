@@ -15,7 +15,7 @@ namespace Lambda
 
 		public static void ForEach()
 		{
-			List<int> nums = new List<int> { 1, 2, 3, 4, 5, 6 };
+			var nums = new List<int> { 1, 2, 3, 4, 5, 6 };
 			Parallel.ForEach(nums, (value) =>
 			{
 				Console.WriteLine(value);
@@ -25,7 +25,7 @@ namespace Lambda
 
 		public static void Predicate()
 		{
-			List<int> nums = new List<int> { 1, 2, 3, 4, 5, 6 };
+			var nums = new List<int> { 1, 2, 3, 4, 5, 6 };
 			
 			int total = SumAll(nums, n => true);
 			Console.WriteLine(total);
