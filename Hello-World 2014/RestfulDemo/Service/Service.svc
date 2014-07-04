@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="RestfulDemo.HelloWorldService" CodeBehind="HelloWorldService.cs" Factory="System.ServiceModel.Activation.WebServiceHostFactory"%>
