@@ -1,25 +1,17 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Lab
 {
     public class Person
     {
-        private String name = String.Empty;
-        private int age = 0;
-    
         public String Name { get; set; }
         public int Age { get; set; }
     }
     
     public class Teacher
     {
-        private String name = String.Empty;
-        private int age = 0;
-
         public String Name { get; set; }
         public int Age { get; set; }
 
@@ -55,8 +47,8 @@ namespace Lab
         [TestMethod]
         public void DynamicMethod()
         {
-            Person person = new Person{Name = "Jay", Age = 18};
-            Teacher teacher = new Teacher{Name = "Adam", Age = 20};
+            var person = new Person{Name = "Jay", Age = 18};
+            var teacher = new Teacher{Name = "Adam", Age = 20};
             Assert.AreEqual("Jay", Converter.Execute(person));
             Assert.AreEqual("Adam", Converter.Execute(teacher));
 

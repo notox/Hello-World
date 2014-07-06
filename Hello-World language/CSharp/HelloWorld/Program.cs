@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
 
-namespace Performance
+namespace HelloWorld
 {
 	public class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
-			Tester tester = new Tester();
+			var tester = new Tester();
 			tester.Test(1000000);
 			Console.ReadKey();
 		}
@@ -20,36 +17,36 @@ namespace Performance
 	{
 		public void Test(int n)
 		{
-			Source source = new Source();
+			var source = new Source();
 			source.SourceEvent += EmptyMethod;
 			source.SourceEvent += EmptyMethod2;
 
-			Stopwatch watch = Stopwatch.StartNew();
-			for (int i = 0; i < n; i++ )
+			var watch = Stopwatch.StartNew();
+			for (var i = 0; i < n; i++ )
 			{
 				source.TriggerEvent();
 			}
 			watch.Stop();
 			Console.WriteLine(watch.Elapsed.ToString());
 
-			Stopwatch watch2 = Stopwatch.StartNew();
-			for (int i = 0; i < n; i++)
+			var watch2 = Stopwatch.StartNew();
+			for (var i = 0; i < n; i++)
 			{
-				this.EmptyMethod(source, EventArgs.Empty);
+				EmptyMethod(source, EventArgs.Empty);
 			}
 			watch2.Stop();
 			Console.WriteLine(watch2.Elapsed.ToString());
 
-			Stopwatch watch3 = Stopwatch.StartNew();
-			for (int i = 0; i < n; i++)
+			var watch3 = Stopwatch.StartNew();
+			for (var i = 0; i < n; i++)
 			{
 				source.TriggerEventWithHelper();
 			}
 			watch3.Stop();
 			Console.WriteLine(watch3.Elapsed.ToString());
 
-			Stopwatch watch4 = Stopwatch.StartNew();
-			for (int i = 0; i < n; i++)
+			var watch4 = Stopwatch.StartNew();
+			for (var i = 0; i < n; i++)
 			{
 				source.TriggerEventWithHelper2();
 			}
@@ -94,9 +91,9 @@ namespace Performance
 			if (del == null)
 				return;
 
-			Delegate[] delegates = del.GetInvocationList();
+			var delegates = del.GetInvocationList();
 
-			foreach (Delegate sink in delegates)
+			foreach (var sink in delegates)
 			{
 				try
 				{
@@ -104,7 +101,8 @@ namespace Performance
 				}
 				catch (Exception ex)
 				{
-					throw;
+					Console.WriteLine("There is a expection: {0}", ex.Message);
+                    throw;
 				}
 			}
 		}

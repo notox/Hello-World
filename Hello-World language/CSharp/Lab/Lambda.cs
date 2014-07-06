@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Lab
@@ -12,7 +11,7 @@ namespace Lab
 		[TestMethod]
 		public void Closure()
 		{
-			int max = 0;
+			var max = 0;
 			Func<string, bool> predicate = 
 				item =>
 				{
@@ -28,7 +27,7 @@ namespace Lab
 				"555",
 				"666"
 			};
-			var newList = list.Where(predicate);
+			var newList = list.Where(predicate).ToArray();
 			Assert.AreEqual(3, newList.Count());
 			Assert.IsTrue(newList.Contains("444"));
 			Assert.IsTrue(newList.Contains("555"));
