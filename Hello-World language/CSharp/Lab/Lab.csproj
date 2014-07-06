@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CoOrContraVariance.cs" />
     <Compile Include="Dynamic.cs" />
+    <Compile Include="ImplicitPropertySyntax.cs" />
     <Compile Include="Lambda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
