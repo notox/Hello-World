@@ -7,7 +7,7 @@ namespace Lambda
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			ForEach();
 			Predicate();
@@ -16,10 +16,7 @@ namespace Lambda
 		public static void ForEach()
 		{
 			var nums = new List<int> { 1, 2, 3, 4, 5, 6 };
-			Parallel.ForEach(nums, (value) =>
-			{
-				Console.WriteLine(value);
-			});
+		    Parallel.ForEach(nums, value => Console.WriteLine(value));
 			Console.ReadKey();
 		}
 
@@ -27,7 +24,7 @@ namespace Lambda
 		{
 			var nums = new List<int> { 1, 2, 3, 4, 5, 6 };
 			
-			int total = SumAll(nums, n => true);
+			var total = SumAll(nums, n => true);
 			Console.WriteLine(total);
 			total = SumAll(nums, n => n % 2 == 0);
 			Console.WriteLine(total);
