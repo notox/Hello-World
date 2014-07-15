@@ -52,6 +52,7 @@
     <Compile Include="Lambda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reference.cs" />
+    <Compile Include="Stone.cs" />
     <Compile Include="UserDefinedConversionOperator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
