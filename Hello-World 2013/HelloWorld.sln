@@ -36,6 +36,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BSTree2DoubleLinkedList", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringProblem", "StringProblem\StringProblem.vcxproj", "{AC5E0714-698D-49EA-A091-B4CBFE7FE523}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sizeof", "Sizeof\Sizeof.vcxproj", "{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = HelloWorld.vsmdi
@@ -219,6 +221,18 @@ Global
 		{AC5E0714-698D-49EA-A091-B4CBFE7FE523}.Release|Win32.ActiveCfg = Release|Win32
 		{AC5E0714-698D-49EA-A091-B4CBFE7FE523}.Release|Win32.Build.0 = Release|Win32
 		{AC5E0714-698D-49EA-A091-B4CBFE7FE523}.Release|x86.ActiveCfg = Release|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Debug|Win32.Build.0 = Debug|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Debug|x86.ActiveCfg = Debug|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Release|Any CPU.ActiveCfg = Release|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Release|Win32.ActiveCfg = Release|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Release|Win32.Build.0 = Release|Win32
+		{03816A9E-6A2C-4A28-A527-7DAF1D4AC91B}.Release|x86.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
